@@ -17,6 +17,8 @@ class SimproCredential extends Model
     protected $fillable = [
         'authenticatable_id',
         'authenticatable_type',
+        'base_url',
+        'api_key',
         'simpro_authenticator',
     ];
 
