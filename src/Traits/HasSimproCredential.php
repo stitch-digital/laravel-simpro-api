@@ -49,4 +49,45 @@ trait HasSimproCredential
     {
         return $this->morphOne(SimproCredential::class, 'authenticatable');
     }
+
+    /**
+     * Set the Simpro credentials for the model.
+     *
+     * @param string $baseUrl
+     * @param string $apiKey
+     * @return SimproCredential
+     * @throws Exception
+     */
+    public function setSimproCredentials(string $baseUrl, string $apiKey): SimproCredential
+    {
+        $simproCredential = $this->simproCredential()->updateOrCreate([], [
+            'base_url' => $baseUrl,
+            'api_key' => $apiKey,
+        ]);
+
+        if (!$simproCredential instanceof SimproCredential) {
+            throw new Exception('Expected instance of SimproCredential');
+        }
+
+        return $simproCredential;
+    }
+
+    /**
+     * Get the Simpro credentials for the model.
+     *
+     * @return array|null
+     */
+    public function getSimproCredentials(): ?array
+    {
+        $credential = $this->simproCredential()->first();
+
+        if ($credential) {
+            return [
+                'base_url' => $credential->base_url,
+                'api_key' => $credential->api_key,
+            ];
+        }
+
+        return null;
+    }
 }
