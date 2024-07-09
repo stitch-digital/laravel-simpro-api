@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) :vendor_name <author@domain.com>
+Copyright (c) Stitch Digital Limited <john@stitch-digital.co>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
