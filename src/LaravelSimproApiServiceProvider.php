@@ -17,4 +17,9 @@ class LaravelSimproApiServiceProvider extends PackageServiceProvider
             ->hasMigration('create_simpro_credentials_table')
             ->hasCommand(LaravelSimproApiCommand::class);
     }
+
+    public function packageBooted(): void
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/simpro-api.php', 'simpro-api');
+    }
 }
