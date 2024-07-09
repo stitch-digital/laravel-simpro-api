@@ -16,6 +16,6 @@ class GetAllCustomers extends Request
 
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId;
+        return '/companies/' . $this->companyId . '/customers/';
     }
 }
