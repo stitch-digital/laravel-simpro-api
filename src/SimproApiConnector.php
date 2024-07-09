@@ -16,8 +16,12 @@ class SimproApiConnector extends SimproBaseConnector
 
     public function __construct(array $config)
     {
-        parent::__construct($config);
+        $config = array_merge([
+            'base_url' => config('simpro-api.base_url'),
+            'api_key' => config('simpro-api.api_key')
+        ], $config);
 
+        parent::__construct($config);
         $this->validateOAuthConfiguration();
     }
 
