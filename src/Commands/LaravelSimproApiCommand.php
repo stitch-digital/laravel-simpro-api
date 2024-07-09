@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace StitchDigital\LaravelSimproApi\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelSimproApiCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-simpro-api';
 
     public $description = 'My command';
 
