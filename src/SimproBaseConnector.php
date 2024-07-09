@@ -10,11 +10,13 @@ use Saloon\RateLimitPlugin\Limit;
 use Saloon\RateLimitPlugin\Stores\LaravelCacheStore;
 use Saloon\RateLimitPlugin\Traits\HasRateLimits;
 use Saloon\Traits\Plugins\AcceptsJson;
+use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
 abstract class SimproBaseConnector extends Connector
 {
     use AcceptsJson;
     use HasRateLimits;
+    use AlwaysThrowOnErrors;
 
     public string $baseUrl;
     public ?string $clientId;
