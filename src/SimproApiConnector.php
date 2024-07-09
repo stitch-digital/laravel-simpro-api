@@ -9,12 +9,9 @@ class SimproApiConnector extends SimproBaseConnector
 {
 
     public string $baseUrl;
-    public ?string $clientId;
-    public ?string $clientSecret;
-    public ?string $redirectUri;
     public ?string $apiKey;
 
-    public function __construct(array $config)
+    public function __construct(array $config = [])
     {
         $config = array_merge([
             'base_url' => config('simpro-api.base_url'),
