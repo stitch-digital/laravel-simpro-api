@@ -27,11 +27,11 @@ abstract class SimproBaseConnector extends Connector
      */
     public function __construct(array $config = [])
     {
-        $this->baseUrl = $config['base_url'] ?? config('laravel-simpro-api.base_url');
-        $this->clientId = $config['client_id'] ?? config('laravel-simpro-api.oauth.client_id');
-        $this->clientSecret = $config['client_secret'] ?? config('laravel-simpro-api.oauth.client_secret');
-        $this->redirectUri = $config['redirect_uri'] ?? config('laravel-simpro-api.oauth.redirect_uri');
-        $this->apiKey = $config['api_key'] ?? config('laravel-simpro-api.api_key');
+        $this->baseUrl = $config['base_url'] ?? config('simpro-api.base_url');
+        $this->clientId = $config['client_id'] ?? config('simpro-api.oauth.client_id');
+        $this->clientSecret = $config['client_secret'] ?? config('simpro-api.oauth.client_secret');
+        $this->redirectUri = $config['redirect_uri'] ?? config('simpro-api.oauth.redirect_uri');
+        $this->apiKey = $config['api_key'] ?? config('simpro-api.api_key');
 
         $this->validateConfiguration();
     }
@@ -54,8 +54,8 @@ abstract class SimproBaseConnector extends Connector
     protected function resolveLimits(): array
     {
         return [
-            Limit::allow(config('laravel-simpro-api.rate_limit.per_second'),
-                threshold: config('laravel-simpro-api.rate_limit.threshold'))
+            Limit::allow(config('simpro-api.rate_limit.per_second'),
+                threshold: config('simpro-api.rate_limit.threshold'))
                 ->everySeconds(seconds: 1)->sleep(),
         ];
     }
@@ -80,7 +80,7 @@ abstract class SimproBaseConnector extends Connector
      */
     protected function getLimiterPrefix(): ?string
     {
-        $baseUrl = $this->baseUrl ?? config('laravel-simpro-api.base_url');
+        $baseUrl = $this->baseUrl ?? config('simpro-api.base_url');
 
         return 'simpro-api-' . $baseUrl;
     }
