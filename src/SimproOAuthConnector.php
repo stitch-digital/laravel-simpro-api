@@ -14,10 +14,16 @@ class SimproOAuthConnector extends SimproBaseConnector
     public ?string $clientId;
     public ?string $clientSecret;
     public ?string $redirectUri;
-    public ?string $apiKey;
 
-    public function __construct(array $config)
+    public function __construct(array $config = [])
     {
+        $config = array_merge([
+            'base_url' => config('simpro-api.base_url'),
+            'client_id' => config('simpro-api.oauth.client_id'),
+            'client_secret' => config('simpro-api.oauth.client_secret'),
+            'redirect_uri' => config('simpro-api.oauth.redirect_uri')
+        ], $config);
+
         parent::__construct($config);
 
         $this->validateOAuthConfiguration();
