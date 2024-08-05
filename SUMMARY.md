@@ -1,3 +1,7 @@
 # Table of contents
 
-* [Page](README.md)
+* [Laravel Simpro API](README.md)
+
+## The Basics
+
+* [⬇️ Installation](the-basics/installation.md)
