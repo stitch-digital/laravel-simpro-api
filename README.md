@@ -25,7 +25,7 @@ Then run the following command to install the package:
 php artisan laravel-simpro:install
 ```
 
-Full documentation on the package can be [found here](https://laravel-simpro-api.stitch-digital.co/).
+This package is built using Saloon. Check out their [documentation here](https://docs.saloon.dev/).
 
 ## Usage
 
