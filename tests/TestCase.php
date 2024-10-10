@@ -4,7 +4,6 @@ namespace StitchDigital\LaravelSimproApi\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Saloon\Http\Faking\MockClient;
 use StitchDigital\LaravelSimproApi\LaravelSimproApiServiceProvider;
 
 class TestCase extends Orchestra
@@ -16,8 +15,6 @@ class TestCase extends Orchestra
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'StitchDigital\\LaravelSimproApi\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
-
-        MockClient::destroyGlobal();
     }
 
     protected function getPackageProviders($app)
