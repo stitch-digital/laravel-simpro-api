@@ -109,16 +109,17 @@ return [
 ];
 ```
 
-You will need to add the following environment variables to your `.env` file:
+This package is built using Saloon. Check out their [documentation here](https://docs.saloon.dev/).
+
+## Usage
+
+### Using a Single Simpro Connection
+If you are using a single Simpro connection, you can add the following environment variables to your `.env` file:
 
 ```bash
 SIMPRO_BASE_URL=https://your-build-url.simprosuite.com
 SIMPRO_API_KEY=your-api-key
 ```
-
-This package is built using Saloon. Check out their [documentation here](https://docs.saloon.dev/).
-
-## Usage
 
 To use the package, you can use the Simpro facade to make requests to the API:
 
@@ -128,6 +129,25 @@ use StitchDigital\LaravelSimproApi\Requests\Info\GetInfo;
 
 $response = Simpro::send(new GetInfo())->json();
 ```
+
+### Using Multiple Simpro Connections
+If you are using multiple Simpro connections, you can pass the base URL and API key to the constructor of the request - although this means you can no longer user the facade:
+
+```php
+use StitchDigital\LaravelSimproApi\LaravelSimproApi;
+use StitchDigital\LaravelSimproApi\Requests\Info\GetInfo;
+
+$connector = new LaravelSimproApi(
+    baseUrl: 'https://custom-api-url.simprosuite.com',
+    apiKey: 'custom-api-key'
+);
+
+$response = $connector->send(new GetInfo());
+
+$response->json();
+```
+
+### Available Requests
 
 For a full list of available requests, use the following command:
 
