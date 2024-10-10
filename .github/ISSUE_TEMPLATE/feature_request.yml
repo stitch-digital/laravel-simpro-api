@@ -1,0 +1,25 @@
+name: Feature Request
+description: Request a new feature for the Package
+title: "[Feature Request]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We love to hear about new feature ideas! Please provide the following details.
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: Please describe the feature you'd like to request.
+      placeholder: I would like the package to...
+    validations:
+      required: true
+  - type: textarea
+    id: feature-use-case
+    attributes:
+      label: Use Case
+      description: What use case would this feature serve? Provide any relevant examples.
+      placeholder: This feature would help me when...
+    validations:
+      required: true
