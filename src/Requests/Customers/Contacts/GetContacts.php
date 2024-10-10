@@ -25,6 +25,6 @@ class GetContacts extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/contacts/.;
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/contacts/';
     }
 }
