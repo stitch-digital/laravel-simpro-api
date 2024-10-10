@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace StitchDigital\LaravelSimproApi;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use StitchDigital\LaravelSimproApi\Commands\LaravelSimproApiCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class LaravelSimproApiServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('laravel-simpro-api')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_migration_table_name_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_laravel_simpro_api_table')
+            ->hasCommand(LaravelSimproApiCommand::class);
     }
 }
