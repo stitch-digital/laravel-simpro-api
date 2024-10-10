@@ -171,7 +171,8 @@ If you discover any security related issues, please email john@stitch-digital.co
 
 ## Credits
 
--   [John Trickett](https://github.com/stitch-digital)
+-   [John Trickett](https://github.com/johntrickett86)
+-   [Anthony Elleray](https://github.com/AElleray)
 -   [All Contributors](../../contributors)
 
 ## License
