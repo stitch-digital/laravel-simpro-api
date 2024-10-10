@@ -35,7 +35,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
     public function __construct()
     {
         // Set the rate limiting flag from the config
-        $this->rateLimitingEnabled = config('simpro.rate_limit.enabled', true);
+        $this->rateLimitingEnabled = config('simpro-api.rate_limit.enabled', true);
     }
 
     /**
@@ -43,7 +43,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
      */
     public function resolveBaseUrl(): string
     {
-        return config('simpro.base_url').'/api/v1.0';
+        return config('simpro-api.base_url').'/api/v1.0';
     }
 
     /**
@@ -67,7 +67,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
      */
     protected function defaultAuth(): TokenAuthenticator
     {
-        return new TokenAuthenticator(config('simpro.api_key'));
+        return new TokenAuthenticator(config('simpro-api.api_key'));
     }
 
     /**
@@ -79,8 +79,8 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
     {
         return [
             Limit::allow(
-                config('simpro.rate_limit.per_second'),
-                threshold: config('simpro.rate_limit.threshold')
+                config('simpro-api.rate_limit.per_second'),
+                threshold: config('simpro-api.rate_limit.threshold')
             )->everySeconds(1)->sleep(),
         ];
     }
@@ -90,7 +90,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
      */
     protected function resolveRateLimitStore(): RateLimitStore
     {
-        return new LaravelCacheStore(Cache::store(config('simpro.rate_limit.driver')));
+        return new LaravelCacheStore(Cache::store(config('simpro-api.rate_limit.driver')));
     }
 
     /**
@@ -133,7 +133,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
      */
     public function resolveCacheDriver(): Driver
     {
-        return new LaravelCacheDriver(Cache::store(config('simpro.cache.driver')));
+        return new LaravelCacheDriver(Cache::store(config('simpro-api.cache.driver')));
     }
 
     /**
@@ -141,7 +141,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
      */
     public function cacheExpiryInSeconds(): int
     {
-        return config('simpro.cache.enabled') === false ? 0 : config('simpro.cache.expire');
+        return config('simpro-api.cache.enabled') === false ? 0 : config('simpro-api.cache.expire');
     }
 
     /**

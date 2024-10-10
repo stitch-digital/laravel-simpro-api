@@ -19,15 +19,121 @@ Laravel Simpro API can be installed using composer:
 composer require stitch-digital/laravel-simpro-api
 ```
 
-Then run the following command to install the package:
+Then publish the config file:
 
 ```bash
-php artisan laravel-simpro:install
+php artisan vendor:publish --tag="simpro-api-config"
+```
+
+This will publish the configuration file to `config/simpro-api.php` where you can configure your settings:
+
+```php
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Simpro Base URL
+    |--------------------------------------------------------------------------
+    |
+    | Set the base URL for the Simpro API. This option is not required when
+    | using a multi-tenancy setup, as values are passed in the constructor.
+    |
+    */
+
+    'base_url' => env('SIMPRO_BASE_URL'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Simpro API Key
+    |--------------------------------------------------------------------------
+    |
+    | Set the API key for the Simpro API. This option is not required when
+    | using a multi-tenancy setup, as values are passed in the constructor.
+    |
+    */
+
+    'api_key' => env('SIMPRO_API_KEY'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cache Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Enable or disable caching for Simpro GET requests. The cache driver can
+    | be set to any of the Laravel cache drivers. The cache expiry time is
+    | set in seconds.
+    |
+    */
+
+    'cache' => [
+        'enabled' => 'true',
+        'driver' => 'database',
+        'expire' => 120,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Rate Limit Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Set the rate limit for Simpro requests. The rate limit is set per second
+    | and the threshold is the percentage of the rate limit that is accepted.
+    | The threshold must be a number between 0 and 1 (e.g. 0.5 for 50%).
+    |
+    | The default rate limit is as per the Simpro API documentation.
+    |
+    */
+
+    'rate_limit' => [
+        'enabled' => true,
+        'per_second' => 10,
+        'driver' => 'database',
+        'threshold' => 0.8,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Global Retry Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Set the number of retries for all requests. This can still be overridden
+    | on a per-request basis, by chaining sendAndRetry() to the request:
+    |
+    | Example:
+    | $response = $connector->sendAndRetry($request, 1);
+    |
+    */
+
+    'global_retries' => 3, // Set to null to disable global retries
+
+];
+```
+
+You will need to add the following environment variables to your `.env` file:
+
+```bash
+SIMPRO_BASE_URL=https://your-build-url.simprosuite.com
+SIMPRO_API_KEY=your-api-key
 ```
 
 This package is built using Saloon. Check out their [documentation here](https://docs.saloon.dev/).
 
 ## Usage
+
+To use the package, you can use the Simpro facade to make requests to the API:
+
+```php
+use StitchDigital\LaravelSimproApi\Facades\Simpro;
+use StitchDigital\LaravelSimproApi\Requests\Info\GetInfo;
+
+$response = Simpro::send(new GetInfo())->json();
+```
+
+For a full list of available requests, use the following command:
+
+```bash
+php artisan simpro:list-requests
+```
 
 This package is still in development and not all API endpoints are available yet. We are working on this package regularly as we use it for client projects, with regular releases to add more requests. If you see a missing request, please feel free to create a pull request and contribute!
 
