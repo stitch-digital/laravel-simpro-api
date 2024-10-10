@@ -17,7 +17,7 @@ class LaravelSimproApiCommand extends Command
         $this->info('Listing all available requests in the Simpro package:');
 
         // Define the path to the Requests folder
-        $requestPath = base_path('vendor/stitchdigital/laravel-simpro-api/src/Requests');
+        $requestPath = base_path('vendor/stitch-digital/laravel-simpro-api/src/Requests');
 
         // Check if the directory exists
         if (! is_dir($requestPath)) {
