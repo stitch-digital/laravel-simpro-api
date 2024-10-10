@@ -31,8 +31,6 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
 
     private string $apiKey;
 
-    protected bool $rateLimitingEnabled; // Define the property here
-
     // Constants for time values
     private const DEFAULT_MAX_WAIT_TIME_SECONDS = 60;
 
