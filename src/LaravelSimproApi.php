@@ -19,7 +19,7 @@ use Saloon\PaginationPlugin\PagedPaginator;
 use Saloon\RateLimitPlugin\Contracts\RateLimitStore;
 use Saloon\RateLimitPlugin\Limit;
 use Saloon\RateLimitPlugin\Stores\LaravelCacheStore;
-use Saloon\RateLimitPlugin\Traits\HasRateLimits;
+use Saloon\RateLimitPlugin\Traits\HasRateLimits;  // Correct import for the HasRateLimits trait
 use Saloon\Traits\Plugins\AcceptsJson;
 use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
@@ -27,13 +27,23 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
 {
     use AcceptsJson, AlwaysThrowOnErrors, HasCaching, HasRateLimits;
 
+    private string $baseUrl;
+
+    private string $apiKey;
+
+    protected bool $rateLimitingEnabled; // Define the property here
+
     // Constants for time values
     private const DEFAULT_MAX_WAIT_TIME_SECONDS = 60;
 
     private const DEFAULT_DELAY_MILLISECONDS = 1000;
 
-    public function __construct()
+    public function __construct(?string $baseUrl = null, ?string $apiKey = null)
     {
+        // Set the base URL and API key from the constructor or default config
+        $this->baseUrl = $baseUrl ?? config('simpro-api.base_url');
+        $this->apiKey = $apiKey ?? config('simpro-api.api_key');
+
         // Set the rate limiting flag from the config
         $this->rateLimitingEnabled = config('simpro-api.rate_limit.enabled', true);
     }
@@ -43,7 +53,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
      */
     public function resolveBaseUrl(): string
     {
-        return config('simpro-api.base_url').'/api/v1.0';
+        return $this->baseUrl.'/api/v1.0';
     }
 
     /**
@@ -67,7 +77,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
      */
     protected function defaultAuth(): TokenAuthenticator
     {
-        return new TokenAuthenticator(config('simpro-api.api_key'));
+        return new TokenAuthenticator($this->apiKey);
     }
 
     /**
