@@ -1,10 +1,11 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace StitchDigital\LaravelSimproApi\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use Saloon\Http\Faking\MockClient;
+use StitchDigital\LaravelSimproApi\LaravelSimproApiServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +14,16 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'StitchDigital\\LaravelSimproApi\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        MockClient::destroyGlobal();
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            LaravelSimproApiServiceProvider::class,
         ];
     }
 
@@ -29,7 +32,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_laravel-simpro-api_table.php.stub';
         $migration->up();
         */
     }
