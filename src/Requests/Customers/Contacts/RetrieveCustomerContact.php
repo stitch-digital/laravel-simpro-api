@@ -6,11 +6,10 @@ namespace StitchDigital\LaravelSimproApi\Requests\Customers\Contacts;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
-use Saloon\PaginationPlugin\Contracts\Paginatable;
 
-class GetContacts extends Request implements Paginatable
+class RetrieveCustomerContact extends Request
 {
-    public function __construct(protected readonly int $customerId, protected readonly int $companyId)
+    public function __construct(protected readonly int $contactId, protected readonly int $customerId, protected readonly int $companyId)
     {
         //
     }
@@ -25,6 +24,6 @@ class GetContacts extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/contacts/';
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/contacts/'.$this->contactId;
     }
 }
