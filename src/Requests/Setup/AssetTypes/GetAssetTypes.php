@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Integrations\Simpro\Requests\Setup\AssetTypes;
+namespace StitchDigital\LaravelSimproApi\Requests\Setup\AssetTypes;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
