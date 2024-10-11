@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write  # Ensure the workflow can create pull requests
 
 jobs:
   update:
@@ -27,6 +28,15 @@ jobs:
       - name: Commit updated CHANGELOG
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          branch: main
           commit_message: Update CHANGELOG
           file_pattern: CHANGELOG.md
+          branch: auto-update-changelog # Commit to a new branch
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: auto-update-changelog  # Use the branch from the previous step
+          base: main                     # Target the main branch
+          title: 'Auto-update CHANGELOG'
+          body: 'This pull request was created automatically to update the CHANGELOG file.'
+          commit-message: 'Update CHANGELOG'
