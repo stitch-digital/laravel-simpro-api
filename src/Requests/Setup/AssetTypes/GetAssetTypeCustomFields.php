@@ -23,6 +23,6 @@ class GetAssetTypeCustomFields extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/assetTypes/' . $this->assetTypeId . '/customFields/';
+        return '/companies/'.$this->companyId.'/setup/assetTypes/'.$this->assetTypeId.'/customFields/';
     }
 }

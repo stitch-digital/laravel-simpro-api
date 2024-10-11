@@ -23,6 +23,6 @@ class GetAssetTypeAttachments extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/assetTypes/' . $this->assetTypeId . '/attachments/files/';
+        return '/companies/'.$this->companyId.'/setup/assetTypes/'.$this->assetTypeId.'/attachments/files/';
     }
 }

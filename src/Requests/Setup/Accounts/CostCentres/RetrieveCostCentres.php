@@ -22,6 +22,6 @@ class RetrieveCostCentres extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/accounts/costCenters/' . $this->costCenterId;
+        return '/companies/'.$this->companyId.'/setup/accounts/costCenters/'.$this->costCenterId;
     }
 }

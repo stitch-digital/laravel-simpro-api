@@ -23,6 +23,6 @@ class GetAssetTypeTestReadings extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/assetTypes/' . $this->assetTypeId . '/testReadings/';
+        return '/companies/'.$this->companyId.'/setup/assetTypes/'.$this->assetTypeId.'/testReadings/';
     }
 }

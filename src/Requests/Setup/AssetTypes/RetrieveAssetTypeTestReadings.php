@@ -22,6 +22,6 @@ class RetrieveAssetTypeTestReadings extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/assetTypes/' . $this->assetTypeId . '/testReadings/' . $this->assetTypeTestReadingId;
+        return '/companies/'.$this->companyId.'/setup/assetTypes/'.$this->assetTypeId.'/testReadings/'.$this->assetTypeTestReadingId;
     }
 }

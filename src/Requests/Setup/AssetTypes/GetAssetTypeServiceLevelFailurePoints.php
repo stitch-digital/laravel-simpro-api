@@ -23,6 +23,6 @@ class GetAssetTypeServiceLevelFailurePoints extends Request implements Paginatab
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/assetTypes/' . $this->assetTypeId . '/serviceLevels/' . $this->assetTypeServiceLevelID . '/failurePoints/';
+        return '/companies/'.$this->companyId.'/setup/assetTypes/'.$this->assetTypeId.'/serviceLevels/'.$this->assetTypeServiceLevelID.'/failurePoints/';
     }
 }

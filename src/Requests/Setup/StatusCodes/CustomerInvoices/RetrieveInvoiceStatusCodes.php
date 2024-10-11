@@ -22,6 +22,6 @@ class RetrieveInvoiceStatusCodes extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/statusCodes/customerInvoices/' . $this->statusCodeId;
+        return '/companies/'.$this->companyId.'/setup/statusCodes/customerInvoices/'.$this->statusCodeId;
     }
 }

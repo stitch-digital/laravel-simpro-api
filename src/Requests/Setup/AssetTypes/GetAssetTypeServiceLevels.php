@@ -23,6 +23,6 @@ class GetAssetTypeServiceLevels extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/assetTypes/' . $this->assetTypeId . '/serviceLevels/';
+        return '/companies/'.$this->companyId.'/setup/assetTypes/'.$this->assetTypeId.'/serviceLevels/';
     }
 }

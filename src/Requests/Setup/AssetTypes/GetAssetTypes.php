@@ -23,6 +23,6 @@ class GetAssetTypes extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/assetTypes/';
+        return '/companies/'.$this->companyId.'/setup/assetTypes/';
     }
 }

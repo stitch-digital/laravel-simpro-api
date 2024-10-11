@@ -22,6 +22,6 @@ class RetrieveAssetType extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/assetTypes/' . $this->assetTypeId;
+        return '/companies/'.$this->companyId.'/setup/assetTypes/'.$this->assetTypeId;
     }
 }

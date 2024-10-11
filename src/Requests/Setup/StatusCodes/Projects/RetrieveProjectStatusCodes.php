@@ -22,6 +22,6 @@ class RetrieveProjectStatusCodes extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/' . $this->companyId . '/setup/statusCodes/projects/' . $this->statusCodeId;
+        return '/companies/'.$this->companyId.'/setup/statusCodes/projects/'.$this->statusCodeId;
     }
 }
