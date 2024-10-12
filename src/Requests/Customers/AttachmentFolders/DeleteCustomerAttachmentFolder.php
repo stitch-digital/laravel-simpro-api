@@ -9,7 +9,6 @@ use Saloon\Http\Request;
 
 class DeleteCustomerAttachmentFolder extends Request
 {
-
     /**
      * @param  array<string, mixed>  $data
      */
