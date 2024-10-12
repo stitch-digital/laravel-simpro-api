@@ -28,7 +28,7 @@ class UpdateCustomerContract extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/contacts/'.$this->contractId;
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/contract/'.$this->contractId;
     }
 
     /**
