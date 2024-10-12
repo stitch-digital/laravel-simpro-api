@@ -9,7 +9,7 @@ use Saloon\Http\Request;
 
 class RetrieveCustomerLaborRate extends Request
 {
-    public function __construct(protected readonly int $laborRateId, protected readonly int $contractId, protected readonly int $customerId, protected readonly int $companyId)
+    public function __construct(protected readonly int $laborRateId, protected readonly int $customerId, protected readonly int $companyId)
     {
         //
     }
