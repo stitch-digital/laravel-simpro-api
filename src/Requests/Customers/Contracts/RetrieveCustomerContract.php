@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StitchDigital\LaravelSimproApi\Requests\Customers\Contacts;
+namespace StitchDigital\LaravelSimproApi\Requests\Customers\Contracts;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
