@@ -28,7 +28,7 @@ class UpdateCustomerLaborRate extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/labourRates/'.$this->laborRateId;
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/laborRates/'.$this->laborRateId;
     }
 
     /**
