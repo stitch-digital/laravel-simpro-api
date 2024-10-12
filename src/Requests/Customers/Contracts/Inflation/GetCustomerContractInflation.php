@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StitchDigital\LaravelSimproApi\Requests\Customers\Contracts;
+namespace StitchDigital\LaravelSimproApi\Requests\Customers\Contracts\Inflation;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
