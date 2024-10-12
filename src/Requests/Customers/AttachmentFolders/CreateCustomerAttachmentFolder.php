@@ -29,4 +29,12 @@ class CreateCustomerAttachmentFolder extends Request implements HasBody
     {
         return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/attachments/folders/';
     }
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function defaultBody(): array
+    {
+        return $this->data;
+    }
 }
