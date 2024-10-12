@@ -16,7 +16,7 @@ class UpdateCustomerAttachmentFolder extends Request implements HasBody
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected readonly int $customerId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected string $folderId, protected readonly int $customerId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
@@ -28,7 +28,7 @@ class UpdateCustomerAttachmentFolder extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/attachments/folders/';
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/attachments/folders/'.$this->folderId;
     }
 
     /**
