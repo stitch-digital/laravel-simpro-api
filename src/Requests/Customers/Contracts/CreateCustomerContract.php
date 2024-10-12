@@ -28,7 +28,7 @@ class CreateCustomerContract extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/contract/';
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/contracts/';
     }
 
     /**
