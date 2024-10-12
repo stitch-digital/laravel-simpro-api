@@ -9,7 +9,6 @@ use Saloon\Http\Request;
 
 class DeleteCustomerAttachmentFolder extends Request
 {
-
     public function __construct(protected int $folderId, protected readonly int $customerId, protected readonly int $companyId)
     {
         //
