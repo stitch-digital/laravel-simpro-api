@@ -8,7 +8,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\PaginationPlugin\Contracts\Paginatable;
 
-class GetCustomerContract extends Request implements Paginatable
+class GetCustomerContracts extends Request implements Paginatable
 {
     public function __construct(protected readonly int $customerId, protected readonly int $companyId)
     {
