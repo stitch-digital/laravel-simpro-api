@@ -25,6 +25,6 @@ class GetLaborRates extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/setup/labor/labourRates/';
+        return '/companies/'.$this->companyId.'/setup/labor/laborRates/';
     }
 }

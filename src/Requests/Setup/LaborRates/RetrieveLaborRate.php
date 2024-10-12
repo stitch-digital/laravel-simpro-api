@@ -24,6 +24,6 @@ class RetrieveLaborRate extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/setup/labor/labourRates/'.$this->laborRateId;
+        return '/companies/'.$this->companyId.'/setup/labor/laborRates/'.$this->laborRateId;
     }
 }

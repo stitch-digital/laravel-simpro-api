@@ -28,7 +28,7 @@ class CreateLaborRate extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/setup/labor/labourRates/';
+        return '/companies/'.$this->companyId.'/setup/labor/laborRates/';
     }
 
     /**
