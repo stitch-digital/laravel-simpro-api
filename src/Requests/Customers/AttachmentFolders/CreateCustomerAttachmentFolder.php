@@ -13,14 +13,14 @@ class CreateCustomerAttachmentFolder extends Request implements HasBody
 {
     use HasJsonBody;
 
+    /**
+     * @param  array<string, mixed>  $data
+     */
     public function __construct(protected readonly int $customerId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
 
-    /**
-     * The HTTP method of the request
-     */
     protected Method $method = Method::POST;
 
     /**
