@@ -7,7 +7,7 @@ namespace StitchDigital\LaravelSimproApi\Requests\Customers\AttachmentFolders;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
-class RetrieveCustomerAttachmentFolders extends Request
+class RetrieveCustomerAttachmentFolder extends Request
 {
     public function __construct(protected string $folderId, protected readonly int $customerId, protected int $companyId)
     {
