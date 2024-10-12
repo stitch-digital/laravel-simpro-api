@@ -16,7 +16,7 @@ class UpdateLaborRate extends Request implements HasBody
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected readonly int $laborRateId, protected readonly int $contractId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected readonly int $laborRateId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
