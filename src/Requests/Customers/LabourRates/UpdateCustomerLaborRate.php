@@ -9,14 +9,14 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class UpdateCustomerLabourRate extends Request implements HasBody
+class UpdateCustomerLaborRate extends Request implements HasBody
 {
     use HasJsonBody;
 
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected readonly int $labourRateId, protected readonly int $contractId, protected readonly int $customerId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected readonly int $laborRateId, protected readonly int $contractId, protected readonly int $customerId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
@@ -28,7 +28,7 @@ class UpdateCustomerLabourRate extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/labourRates/'.$this->labourRateId;
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/labourRates/'.$this->laborRateId;
     }
 
     /**

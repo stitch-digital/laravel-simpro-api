@@ -9,7 +9,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class CreateCustomerLabourRate extends Request implements HasBody
+class CreateCustomerLaborRate extends Request implements HasBody
 {
     use HasJsonBody;
 
@@ -28,7 +28,7 @@ class CreateCustomerLabourRate extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/labourRates/';
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/laborRates/';
     }
 
     /**

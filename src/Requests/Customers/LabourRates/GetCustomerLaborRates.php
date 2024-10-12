@@ -8,7 +8,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\PaginationPlugin\Contracts\Paginatable;
 
-class GetCustomerLabourRates extends Request implements Paginatable
+class GetCustomerLaborRates extends Request implements Paginatable
 {
     public function __construct(protected readonly int $customerId, protected readonly int $companyId)
     {
@@ -25,6 +25,6 @@ class GetCustomerLabourRates extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/labourRates/';
+        return '/companies/'.$this->companyId.'/customers/'.$this->customerId.'/laborRates/';
     }
 }
