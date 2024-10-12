@@ -9,7 +9,7 @@ use Saloon\Http\Request;
 
 class DeleteCustomerAttachment extends Request
 {
-    public function __construct(protected string $attachmentId, protected readonly int $customerId, protected int $companyId)
+    public function __construct(protected int $attachmentId, protected readonly int $customerId, protected int $companyId)
     {
         //
     }

@@ -16,7 +16,7 @@ class UpdateCustomerAttachment extends Request implements HasBody
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected string $attachmentId, protected readonly int $customerId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected int $attachmentId, protected readonly int $customerId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
