@@ -9,10 +9,8 @@ use Saloon\Http\Request;
 
 class DeleteCustomerAttachmentFolder extends Request
 {
-    /**
-     * @param  array<string, mixed>  $data
-     */
-    public function __construct(protected string $folderId, protected readonly int $customerId, protected readonly int $companyId)
+
+    public function __construct(protected int $folderId, protected readonly int $customerId, protected readonly int $companyId)
     {
         //
     }

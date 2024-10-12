@@ -9,7 +9,7 @@ use Saloon\Http\Request;
 
 class RetrieveCustomerAttachmentFolder extends Request
 {
-    public function __construct(protected string $folderId, protected readonly int $customerId, protected int $companyId)
+    public function __construct(protected int $folderId, protected readonly int $customerId, protected int $companyId)
     {
         //
     }
