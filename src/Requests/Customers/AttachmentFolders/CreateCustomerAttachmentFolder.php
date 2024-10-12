@@ -12,6 +12,7 @@ use Saloon\Traits\Body\HasJsonBody;
 class CreateCustomerAttachmentFolder extends Request implements HasBody
 {
     use HasJsonBody;
+
     public function __construct(protected readonly int $customerId, protected readonly int $companyId, protected readonly array $data)
     {
         //
