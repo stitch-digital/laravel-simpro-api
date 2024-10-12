@@ -16,7 +16,7 @@ class CreateCustomer extends Request implements HasBody
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected readonly int $companyId, protected readonly array $data, protected string $type = 'companies', protected bool $site = false)
+    public function __construct(protected readonly int $companyId, protected readonly array $data, protected string $type = 'companies', protected bool $createSite = false)
     {
         //
     }
@@ -29,7 +29,7 @@ class CreateCustomer extends Request implements HasBody
     public function resolveEndpoint(): string
     {
         // If the view parameter is set to true, the endpoint should be different
-        if ($this->site) {
+        if ($this->createSite) {
             return '/companies/'.$this->companyId.'/customers/'.$this->type.'/?createSite=true';
         } else {
             return '/companies/'.$this->companyId.'/customers/'.$this->type.'/';
