@@ -33,7 +33,7 @@ jobs:
           branch: auto-update-changelog # Commit to a new branch
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         with:
           branch: auto-update-changelog  # Use the branch from the previous step
           base: main                     # Target the main branch
