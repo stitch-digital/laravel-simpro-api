@@ -10,7 +10,7 @@ use Saloon\PaginationPlugin\Contracts\Paginatable;
 
 class GetCustomerAttachments extends Request implements Paginatable
 {
-    public function __construct(protected readonly int $customerId, protected readonly int $companyId)
+    public function __construct(protected readonly string $customerId, protected readonly int $companyId)
     {
         //
     }
