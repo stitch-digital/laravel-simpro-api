@@ -19,7 +19,7 @@ use Saloon\PaginationPlugin\PagedPaginator;
 use Saloon\RateLimitPlugin\Contracts\RateLimitStore;
 use Saloon\RateLimitPlugin\Limit;
 use Saloon\RateLimitPlugin\Stores\LaravelCacheStore;
-use Saloon\RateLimitPlugin\Traits\HasRateLimits;  // Correct import for the HasRateLimits trait
+use Saloon\RateLimitPlugin\Traits\HasRateLimits;
 use Saloon\Traits\Plugins\AcceptsJson;
 use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 
@@ -38,11 +38,8 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
 
     public function __construct(?string $baseUrl = null, ?string $apiKey = null)
     {
-        // Set the base URL and API key from the constructor or default config
         $this->baseUrl = $baseUrl ?? config('simpro-api.base_url');
         $this->apiKey = $apiKey ?? config('simpro-api.api_key');
-
-        // Set the rate limiting flag from the config
         $this->rateLimitingEnabled = config('simpro-api.rate_limit.enabled', true);
     }
 
