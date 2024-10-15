@@ -66,7 +66,7 @@ return [
     */
 
     'cache' => [
-        'enabled' => 'true',
+        'enabled' => true,
         'driver' => 'database',
         'expire' => 120,
     ],
