@@ -2,7 +2,6 @@
 
 namespace StitchDigital\LaravelSimproApi\Requests\Setup\AssetTypes;
 
-
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\PaginationPlugin\Contracts\Paginatable;
