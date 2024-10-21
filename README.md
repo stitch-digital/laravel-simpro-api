@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/stitch-digital/laravel-simpro-api/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/stitch-digital/laravel-simpro-api/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/stitch-digital/laravel-simpro-api.svg?style=flat-square)](https://packagist.org/packages/stitch-digital/laravel-simpro-api)
 
-![Laravel Simpro API](laravel-simpro-api.png)
+![Laravel Simpro API](./.github/screenshot.png)
 
 Laravel Simpro is a robust package designed to seamlessly integrate your Laravel application with the Simpro API.
 
