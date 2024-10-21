@@ -9,26 +9,26 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class UpdateSiteAsset extends Request implements HasBody
+class CreateSiteAssetAttachment extends Request implements HasBody
 {
     use HasJsonBody;
 
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected readonly string $fileId, protected readonly int $assetId, protected readonly int $siteId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected readonly int $assetId, protected readonly int $siteId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
 
-    protected Method $method = Method::PATCH;
+    protected Method $method = Method::POST;
 
     /**
      * The endpoint for the request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/'.$this->assetId.'/attachments/files/'.$this->fileId;
+        return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/'.$this->assetId.'/attachments/files/';
     }
 
     /**

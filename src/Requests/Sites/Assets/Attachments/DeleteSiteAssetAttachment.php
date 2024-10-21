@@ -7,7 +7,7 @@ namespace StitchDigital\LaravelSimproApi\Requests\Sites\Assets\Attachments;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
-class DeleteSiteAsset extends Request
+class DeleteSiteAssetAttachment extends Request
 {
     public function __construct(protected readonly string $fileId, protected readonly int $assetId, protected readonly int $siteId, protected readonly int $companyId)
     {
