@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StitchDigital\LaravelSimproApi\Requests\Sites\Assets;
+namespace StitchDigital\LaravelSimproApi\Requests\Sites\Assets\Attachments;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
@@ -16,7 +16,7 @@ class CreateSiteAsset extends Request implements HasBody
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected readonly int $siteId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected readonly int $assetId, protected readonly int $siteId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
@@ -28,7 +28,7 @@ class CreateSiteAsset extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/';
+        return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/'.$this->assetId.'/attachments/files/';
     }
 
     /**
