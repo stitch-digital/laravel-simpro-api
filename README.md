@@ -234,7 +234,7 @@ $request->query()->add('Site.ID', $siteId);
 $response = Simpro::send($request)->json();
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
