@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace StitchDigital\LaravelSimproApi\Requests\Sites\Assets\ServiceLevels;
+namespace StitchDigital\LaravelSimproApi\Requests\Sites\Assets\Transfer;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class CreateSiteAssetServiceLevel extends Request implements HasBody
+class CreateSiteAssetTransfer extends Request implements HasBody
 {
     use HasJsonBody;
 
@@ -28,7 +28,7 @@ class CreateSiteAssetServiceLevel extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/'.$this->assetId.'/serviceLevels/';
+        return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/'.$this->assetId.'/transfer/';
     }
 
     /**

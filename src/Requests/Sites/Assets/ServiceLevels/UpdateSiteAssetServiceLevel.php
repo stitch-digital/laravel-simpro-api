@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StitchDigital\LaravelSimproApi\Requests\Sites\Assets;
+namespace StitchDigital\LaravelSimproApi\Requests\Sites\Assets\ServiceLevels;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
