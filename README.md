@@ -11,7 +11,7 @@ Laravel Simpro is a robust package designed to seamlessly integrate your Laravel
 
 The full Simpro API documentation can be [found here](https://developer.simprogroup.com/apidoc/).
 
-## Table of Contents
+# Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
   - [Using a Single Simpro Connection](#using-a-single-simpro-connection)
@@ -30,7 +30,7 @@ The full Simpro API documentation can be [found here](https://developer.simprogr
 - [Credits](#credits)
 - [License](#license)
 
-## Installation
+# Installation
 
 Laravel Simpro API can be installed using composer:
 
@@ -48,7 +48,7 @@ This will publish the configuration file to `config/simpro-api.php` where you ca
 
 This package is built using Saloon. Check out their [documentation here](https://docs.saloon.dev/).
 
-## Usage
+# Usage
 
 ### Using a Single Simpro Connection
 If you are using a single Simpro connection, you can add the following environment variables to your `.env` file:
@@ -264,24 +264,25 @@ $request->query()->add('Site.ID', $siteId);
 $response = Simpro::send($request)->json();
 ```
 
-## Changelog
+# Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Contributing
+# Contributing
 
 Contributions are welcome and will be fully credited! Contributions are accepted via Pull Requests on [GitHub](https://github.com/stitch-digital/laravel-simpro-api).
 
-### Security
+# Security
 
 If you discover any security related issues, please email john@stitch-digital.co instead of using the issue tracker.
 
-## Credits
+# Credits
 
 -   [John Trickett](https://github.com/johntrickett86)
 -   [Anthony Elleray](https://github.com/AElleray)
+-   [Sam Carré](https://github.com/Sammyjo20) - The Creator of Saloon
 -   [All Contributors](https://github.com/stitch-digital/laravel-simpro-api/contributors)
 
-## License
+# License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
