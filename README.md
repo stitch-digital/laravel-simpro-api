@@ -230,7 +230,6 @@ You can disable caching globally in the config file, as well as set the cache dr
 You can control the global retry configuration in the config file:
 
 ```php
-return [
     /*
     |--------------------------------------------------------------------------
     | Global Retry Configuration
