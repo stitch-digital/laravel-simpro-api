@@ -9,7 +9,7 @@ use Saloon\Http\Request;
 
 class RetrieveJobNote extends Request
 {
-    public function __construct(protected string $noteId, protected readonly int $quoteId, protected int $companyId)
+    public function __construct(protected string $noteId, protected readonly int $jobId, protected int $companyId)
     {
         //
     }
@@ -24,6 +24,6 @@ class RetrieveJobNote extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/notes/'.$this->noteId;
+        return '/companies/'.$this->companyId.'/jobs/'.$this->jobId.'/notes/'.$this->noteId;
     }
 }

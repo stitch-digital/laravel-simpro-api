@@ -10,7 +10,7 @@ use Saloon\PaginationPlugin\Contracts\Paginatable;
 
 class GetJobNotes extends Request implements Paginatable
 {
-    public function __construct(protected readonly int $quoteId, protected readonly int $companyId)
+    public function __construct(protected readonly int $jobId, protected readonly int $companyId)
     {
         //
     }
@@ -25,6 +25,6 @@ class GetJobNotes extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/notes/';
+        return '/companies/'.$this->companyId.'/jobs/'.$this->jobId.'/notes/';
     }
 }

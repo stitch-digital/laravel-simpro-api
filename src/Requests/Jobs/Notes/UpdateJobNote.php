@@ -16,7 +16,7 @@ class UpdateJobNote extends Request implements HasBody
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected string $noteId, protected readonly int $quoteId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected string $noteId, protected readonly int $jobId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
@@ -28,7 +28,7 @@ class UpdateJobNote extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/notes/'.$this->noteId;
+        return '/companies/'.$this->companyId.'/jobs/'.$this->jobId.'/notes/'.$this->noteId;
     }
 
     /**
