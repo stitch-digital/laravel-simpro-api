@@ -11,6 +11,25 @@ Laravel Simpro is a robust package designed to seamlessly integrate your Laravel
 
 The full Simpro API documentation can be [found here](https://developer.simprogroup.com/apidoc/).
 
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Using a Single Simpro Connection](#using-a-single-simpro-connection)
+  - [Using Multiple Simpro Connections](#using-multiple-simpro-connections)
+- [Available Requests](#available-requests)
+- [Useful Methods](#useful-methods)
+  - [Responses](#responses)
+  - [Pagination](#pagination)
+  - [Rate Limiting](#rate-limiting)
+  - [Caching](#caching)
+  - [Retries](#retries)
+  - [Query Parameters](#query-parameters)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Security](#security)
+- [Credits](#credits)
+- [License](#license)
+
 ## Installation
 
 Laravel Simpro API can be installed using composer:
