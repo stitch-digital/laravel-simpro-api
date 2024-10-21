@@ -8,7 +8,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\PaginationPlugin\Contracts\Paginatable;
 
-class GetQuoteNote extends Request implements Paginatable
+class GetQuoteNotes extends Request implements Paginatable
 {
     public function __construct(protected readonly int $quoteId, protected readonly int $companyId)
     {
