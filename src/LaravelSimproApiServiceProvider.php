@@ -18,8 +18,6 @@ class LaravelSimproApiServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-simpro-api')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel_simpro_api_table')
             ->hasCommand(LaravelSimproApiCommand::class);
     }
 }
