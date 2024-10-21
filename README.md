@@ -67,8 +67,20 @@ use StitchDigital\LaravelSimproApi\Requests\Info\GetInfo;
 $response = Simpro::send(new GetInfo())->json();
 ```
 
+If you prefer to use dependency injection over facades then you can do this too:
+
+```php
+use StitchDigital\LaravelSimproApi\LaravelSimproApi;
+use StitchDigital\LaravelSimproApi\Requests\Info\GetInfo;
+
+$connector = new new LaravelSimproApi();
+$request = new GetInfo();
+
+$response = $connector->send($request)->json();
+```
+
 ### Using Multiple Simpro Connections
-If you are using multiple Simpro connections, you can pass the base URL and API key to the constructor of the request - although this means you can no longer user the facade:
+If you are using multiple Simpro connections, you can pass the base URL and API key to the constructor of the request:
 
 ```php
 use StitchDigital\LaravelSimproApi\LaravelSimproApi;
