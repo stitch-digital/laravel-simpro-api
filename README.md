@@ -80,7 +80,7 @@ $response = $connector->send($request)->json();
 ```
 
 ### Using Multiple Simpro Connections
-If you are using multiple Simpro connections, you can pass the base URL and API key to the constructor of the request:
+If you are using multiple Simpro connections, you can pass the base URL and API key to the constructor of the connector:
 
 ```php
 use StitchDigital\LaravelSimproApi\LaravelSimproApi;
