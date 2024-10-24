@@ -28,7 +28,7 @@ class UpdateQuoteSectionCostCenterContractorJob extends Request implements HasBo
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/sections/'.$this->sectionId.'/costCenters/'.$this->costCenterId .'/contractorJobs/'.$this->contractorJobId;
+        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/sections/'.$this->sectionId.'/costCenters/'.$this->costCenterId.'/contractorJobs/'.$this->contractorJobId;
     }
 
     /**
