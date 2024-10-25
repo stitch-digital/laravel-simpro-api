@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StitchDigital\LaravelSimproApi\Requests\Quotes\Sections\CostCenters\Assets;
+namespace StitchDigital\LaravelSimproApi\Requests\Quotes\Sections\CostCenters\Prebuilds;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
