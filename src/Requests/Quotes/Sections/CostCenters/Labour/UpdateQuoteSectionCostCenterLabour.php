@@ -28,7 +28,7 @@ class UpdateQuoteSectionCostCenterLabour extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/sections/'.$this->sectionId.'/costCenters/'.$this->costCenterId .'/labour/'.$this->labourId;
+        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/sections/'.$this->sectionId.'/costCenters/'.$this->costCenterId.'/labour/'.$this->labourId;
     }
 
     /**
