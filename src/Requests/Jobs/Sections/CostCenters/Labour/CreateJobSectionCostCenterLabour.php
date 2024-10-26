@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace StitchDigital\LaravelSimproApi\Requests\Quotes\Sections\CostCenters\Labour;
+namespace StitchDigital\LaravelSimproApi\Requests\Jobs\Sections\CostCenters\Labour;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Traits\Body\HasJsonBody;
 
-class CreateQuoteSectionCostCenterLabour extends Request implements HasBody
+class CreateJobSectionCostCenterLabour extends Request implements HasBody
 {
     use HasJsonBody;
 
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected readonly int $sectionId, protected readonly int $quoteId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected readonly int $sectionId, protected readonly int $jobId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
@@ -28,7 +28,7 @@ class CreateQuoteSectionCostCenterLabour extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/sections/'.$this->sectionId.'/costCenters/labour/';
+        return '/companies/'.$this->companyId.'/jobs/'.$this->jobId.'/sections/'.$this->sectionId.'/costCenters/labour/';
     }
 
     /**
