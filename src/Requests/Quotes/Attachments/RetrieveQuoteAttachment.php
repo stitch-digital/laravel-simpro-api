@@ -9,7 +9,6 @@ use Saloon\Http\Request;
 
 class RetrieveQuoteAttachment extends Request
 {
-
     public function __construct(protected string $attachmentId, protected readonly int $quoteId, protected int $companyId, protected bool $view = false)
     {
         //
