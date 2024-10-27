@@ -9,7 +9,8 @@ use Saloon\Http\Request;
 
 class RetrieveQuoteAttachment extends Request
 {
-    public function __construct(protected string $attachmentId, protected readonly int $quoteId, protected int $companyId)
+
+    public function __construct(protected string $attachmentId, protected readonly int $quoteId, protected int $companyId, protected bool $view = false)
     {
         //
     }
@@ -24,6 +25,11 @@ class RetrieveQuoteAttachment extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/attachments/files/'.$this->attachmentId;
+        // If the view parameter is set to true, the endpoint should be different
+        if ($this->view) {
+            return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/attachments/files/'.$this->attachmentId.'/view';
+        } else {
+            return '/companies/'.$this->companyId.'/quotes/'.$this->quoteId.'/attachments/files/'.$this->attachmentId;
+        }
     }
 }
