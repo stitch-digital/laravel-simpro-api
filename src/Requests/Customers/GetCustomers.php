@@ -25,17 +25,17 @@ class GetCustomers extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-         if ($this->type == 'companies') {
+        if ($this->type == 'companies') {
 
-            return '/companies/' . $this->companyId . '/customers/companies';
+            return '/companies/'.$this->companyId.'/customers/companies';
 
-        } else if ($this->type == 'individuals') {
+        } elseif ($this->type == 'individuals') {
 
-             return '/companies/' . $this->companyId . '/customers/individuals';
+            return '/companies/'.$this->companyId.'/customers/individuals';
 
         } else {
 
-            return '/companies/' . $this->companyId . '/customers/';
+            return '/companies/'.$this->companyId.'/customers/';
 
         }
     }
