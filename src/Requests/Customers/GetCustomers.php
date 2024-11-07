@@ -10,7 +10,7 @@ use Saloon\PaginationPlugin\Contracts\Paginatable;
 
 class GetCustomers extends Request implements Paginatable
 {
-    public function __construct(protected readonly int $companyId)
+    public function __construct(protected readonly int $companyId, protected string $type = 'all')
     {
         //
     }
@@ -25,6 +25,18 @@ class GetCustomers extends Request implements Paginatable
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/customers/';
+         if ($this->type == 'companies') {
+
+            return '/companies/' . $this->companyId . '/customers/companies';
+
+        } else if ($this->type == 'individuals') {
+
+             return '/companies/' . $this->companyId . '/customers/individuals';
+
+        } else {
+
+            return '/companies/' . $this->companyId . '/customers/';
+
+        }
     }
 }
