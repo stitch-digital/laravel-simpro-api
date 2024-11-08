@@ -123,20 +123,20 @@ Let's say we want to retrieve all customers from Simpro. We can use the 'GetCust
 
 ```php
 use StitchDigital\LaravelSimproApi\Facades\Simpro;
-use StitchDigital\LaravelSimproApi\Requests\Customers\GetSuppliers;
+use StitchDigital\LaravelSimproApi\Requests\Customers\GetCustomers;
 
 $companyId = 0;
-$response = Simpro::send(new GetSuppliers($companyId))->json();
+$response = Simpro::send(new GetCustomers($companyId))->json();
 ```
 
 However, Simpro will paginate responses by default to a page size of 30 results. We can see this if we return the headers for the same request:
 
 ```php
 use StitchDigital\LaravelSimproApi\Facades\Simpro;
-use StitchDigital\LaravelSimproApi\Requests\Customers\GetSuppliers;
+use StitchDigital\LaravelSimproApi\Requests\Customers\GetCustomers;
 
 $companyId = 0;
-$response = Simpro::send(new GetSuppliers($companyId))->headers();
+$response = Simpro::send(new GetCustomers($companyId))->headers();
 ```
 
 This will return pagination data in the headers:
@@ -153,13 +153,31 @@ The easiest way to use the paginator is to collect all responses like this:
 
 ```php
 use StitchDigital\LaravelSimproApi\Facades\Simpro;
-use StitchDigital\LaravelSimproApi\Requests\Customers\GetSuppliers;
+use StitchDigital\LaravelSimproApi\Requests\Customers\GetCustomers;
 
 $companyId = 0;
-$response = Simpro::paginate(new GetSuppliers($companyId))
+$response = Simpro::paginate(new GetCustomers($companyId))
   ->collect()
   ->all();
 ```
+
+When using the paginator, you can override the Simpro default per page limit of 30 by chaining the setPerPageLimit method to the request:
+
+```php
+use StitchDigital\LaravelSimproApi\Facades\Simpro;
+use StitchDigital\LaravelSimproApi\Requests\Customers\GetCustomers;
+
+$companyId = 0;
+$response = Simpro::paginate(new GetCustomers($companyId))
+  ->setPerPageLimit(250) // increase the per page limit to 250
+  ->collect()
+  ->all();
+```
+
+The maximum per page limit is 250.
+
+> [!WARNING]  
+> Take care when increasing the per page limit. If you are dealing with large datasets and performing complex operations, you may want to keep this at the default to avoid memory issues.
 
 ### Rate Limiting
 
