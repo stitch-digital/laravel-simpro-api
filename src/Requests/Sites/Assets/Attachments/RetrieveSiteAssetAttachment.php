@@ -26,7 +26,7 @@ class RetrieveSiteAssetAttachment extends Request
     {
         // If the view parameter is set to true, the endpoint should be different
         if ($this->view) {
-            return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/'.$this->assetId.'/attachments/files/'.$this->attachmentId.'/view';
+            return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/'.$this->assetId.'/attachments/files/'.$this->attachmentId.'/view/';
         } else {
             return '/companies/'.$this->companyId.'/sites/'.$this->siteId.'/assets/'.$this->assetId.'/attachments/files/'.$this->attachmentId;
         }

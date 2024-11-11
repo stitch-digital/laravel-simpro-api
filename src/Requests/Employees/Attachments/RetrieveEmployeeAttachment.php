@@ -26,7 +26,7 @@ class RetrieveEmployeeAttachment extends Request
     {
         // If the view parameter is set to true, the endpoint should be different
         if ($this->view) {
-            return '/companies/'.$this->companyId.'/employees/'.$this->employeeId.'/attachments/files/'.$this->attachmentId.'/view';
+            return '/companies/'.$this->companyId.'/employees/'.$this->employeeId.'/attachments/files/'.$this->attachmentId.'/view/';
         } else {
             return '/companies/'.$this->companyId.'/employees/'.$this->employeeId.'/attachments/files/'.$this->attachmentId;
         }
