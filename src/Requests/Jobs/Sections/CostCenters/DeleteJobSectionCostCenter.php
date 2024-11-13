@@ -9,7 +9,7 @@ use Saloon\Http\Request;
 
 class DeleteJobSectionCostCenter extends Request
 {
-    public function __construct(protected string $costCenterId, protected string $sectionId, protected readonly int $jobId, protected int $companyId)
+    public function __construct(protected int $costCenterId, protected int $sectionId, protected readonly int $jobId, protected int $companyId)
     {
         //
     }
