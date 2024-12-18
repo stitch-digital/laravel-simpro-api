@@ -73,7 +73,7 @@ If you prefer to use dependency injection over facades then you can do this too:
 use StitchDigital\LaravelSimproApi\LaravelSimproApi;
 use StitchDigital\LaravelSimproApi\Requests\Info\GetInfo;
 
-$connector = new new LaravelSimproApi();
+$connector = new LaravelSimproApi();
 $request = new GetInfo();
 
 $response = $connector->send($request)->json();
