@@ -166,10 +166,17 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
         {
             protected ?int $perPageLimit = 30;
 
+            /**
+             * @return bool
+             */
+            public function isDetectInfiniteLoop(): bool
+            {
+                return config('simpro-api.detect_infinite_loops', true);
+            }
+
             protected function onRewind(): void
             {
                 $this->currentPage = 1;
-                $this->page = 1;
             }
 
             protected function isLastPage(Response $response): bool
@@ -187,7 +194,8 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
 
             public function getTotalResults(): int
             {
-                return (int) $this->currentResponse->header('Result-Total', 0);
+                return (int) $this->currentResponse?->header('Result-Total');
+
             }
 
             protected function getTotalPages(Response $response): int
