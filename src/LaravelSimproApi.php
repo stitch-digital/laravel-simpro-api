@@ -166,9 +166,6 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
         {
             protected ?int $perPageLimit = 30;
 
-            /**
-             * @return bool
-             */
             public function isDetectInfiniteLoop(): bool
             {
                 return config('simpro-api.detect_infinite_loops', true);
