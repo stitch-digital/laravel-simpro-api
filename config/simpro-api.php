@@ -77,5 +77,6 @@ return [
     */
 
     'global_retries' => 3, // Set to null to disable global retries
+    'detect_infinite_loops' => true,
 
 ];
