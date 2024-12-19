@@ -166,12 +166,18 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
         {
             protected ?int $perPageLimit = 30;
 
+            protected function onRewind(): void
+            {
+                $this->currentPage = 1;
+                $this->page = 1;
+            }
+
             protected function isLastPage(Response $response): bool
             {
                 $currentPage = $this->currentPage;
-                $totalPages = (int) $response->header('Result-Pages');
+                $totalPages = $this->getTotalPages($response);
 
-                return $currentPage >= $totalPages;
+                return $currentPage > $totalPages;
             }
 
             protected function getPageItems(Response $response, Request $request): array
@@ -179,9 +185,19 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
                 return $response->json();
             }
 
+            public function getTotalResults(): int
+            {
+                return (int) $this->currentResponse->header('Result-Total', 0);
+            }
+
+            protected function getTotalPages(Response $response): int
+            {
+                return (int) $response->header('Result-Pages');
+            }
+
             protected function applyPagination(Request $request): Request
             {
-                $request->query()->add('page', $this->currentPage + 1);
+                $request->query()->add('page', $this->currentPage);
 
                 if (isset($this->perPageLimit)) {
                     $request->query()->add('pageSize', $this->perPageLimit);
