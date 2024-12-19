@@ -181,7 +181,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
 
             protected function applyPagination(Request $request): Request
             {
-                $request->query()->add('page', $this->currentPage);
+                $request->query()->add('page', $this->currentPage + 1);
 
                 if (isset($this->perPageLimit)) {
                     $request->query()->add('pageSize', $this->perPageLimit);
