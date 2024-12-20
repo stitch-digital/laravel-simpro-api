@@ -65,18 +65,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Global Retry Configuration
+    | Default Overrides
     |--------------------------------------------------------------------------
     |
-    | Set the number of retries for all requests. This can still be overridden
-    | on a per-request basis, by chaining sendAndRetry() to the request:
-    |
-    | Example:
-    | $response = $connector->sendAndRetry($request, 1);
+    | Set default values for elements of behaviour globally.
     |
     */
 
     'global_retries' => 3, // Set to null to disable global retries
-    'detect_infinite_loops' => true,
+    'detect_infinite_loops' => true, // Set to false to disable infinite loop detection
+    'default_pagination_limit' => 30, // Set to null to use the Simpro default
 
 ];

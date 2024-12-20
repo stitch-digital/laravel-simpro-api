@@ -164,7 +164,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
 
         return new class(connector: $this, request: $request) extends PagedPaginator
         {
-            protected ?int $perPageLimit = 30;
+            protected ?int $perPageLimit;
 
             protected bool $detectInfiniteLoop;
 
@@ -173,6 +173,7 @@ class LaravelSimproApi extends Connector implements Cacheable, HasPagination
                 parent::__construct($connector, $request);
 
                 $this->detectInfiniteLoop = config('simpro-api.detect_infinite_loops', true);
+                $this->perPageLimit = config('simpro-api.default_pagination_limit', 30);
             }
 
             protected function onRewind(): void
