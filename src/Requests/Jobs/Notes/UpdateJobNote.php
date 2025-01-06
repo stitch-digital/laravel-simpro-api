@@ -16,7 +16,7 @@ class UpdateJobNote extends Request implements HasBody
     /**
      * @param  array<string, mixed>  $data
      */
-    public function __construct(protected string $noteId, protected readonly int $jobId, protected readonly int $companyId, protected readonly array $data)
+    public function __construct(protected int $noteId, protected readonly int $jobId, protected readonly int $companyId, protected readonly array $data)
     {
         //
     }
