@@ -24,6 +24,6 @@ class DeleteActivitySchedule extends Request
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/activitySchedules/'.$this->$scheduleId;
+        return '/companies/'.$this->companyId.'/activitySchedules/'.$this->scheduleId;
     }
 }

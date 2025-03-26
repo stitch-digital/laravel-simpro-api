@@ -28,7 +28,7 @@ class UpdateActivitySchedule extends Request implements HasBody
      */
     public function resolveEndpoint(): string
     {
-        return '/companies/'.$this->companyId.'/activitySchedules/'.$this->$scheduleId;
+        return '/companies/'.$this->companyId.'/activitySchedules/'.$this->scheduleId;
     }
 
     /**
