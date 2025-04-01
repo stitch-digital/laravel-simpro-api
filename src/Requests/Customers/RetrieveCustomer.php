@@ -9,9 +9,9 @@ use Saloon\Http\Request;
 
 class RetrieveCustomer extends Request
 {
-    public function __construct(protected readonly int $customerId, protected int $companyId, protected string $type = 'companies')
+    public function __construct(protected readonly int $customerId, protected int $companyId, protected ?string $type)
     {
-        //
+        $this->type = $type ?? 'companies';
     }
 
     /**
